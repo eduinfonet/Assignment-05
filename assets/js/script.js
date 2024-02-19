@@ -1,16 +1,27 @@
-const busTicket = document.querySelectorAll(".seat-plan");
-//console.log(busTicket);
+function handleSeat(event) {
+  // seat sell count
+  const increasrSeat = document.getElementById("increase-seat");
+  const increasrSeatText = increasrSeat.innerText;
+  const currentSeat = parseInt(increasrSeatText);
+  const newSeat = currentSeat + 1;
+  increasrSeat.innerText = newSeat;
+  //console.log(newSeat);
+  //seat left
+  const seatLeft = document.getElementById("seat-left");
+  const seatLeftText = seatLeft.innerText;
+  const leftSeat = parseInt(seatLeftText);
+  const newLeftSeat = leftSeat - 1;
+  seatLeft.innerText = newLeftSeat;
+  //console.log(newLeftSeat);
 
-for (let i = 0; i < busTicket.length; i++) {
-  const ticket = busTicket[i];
+  // Get the container div
+  var seatColor = document.getElementById("seat-color");
 
-  ticket.addEventListener("click", function () {
-    const seatNumber = document.getElementById("seat1");
+  // Get all elements within the container
+  var elements = seatColor.querySelectorAll("p");
 
-    const selectContainer = document.getElementById("priceAndPlaceUl");
-
-    const li = document.createElement("li");
-    const p = document.createElement("p");
-    const SeatClass = document.createElement("p");
+  // Apply the class to each element
+  elements.forEach(function (element) {
+    element.classList.add("bg-green-500");
   });
 }
